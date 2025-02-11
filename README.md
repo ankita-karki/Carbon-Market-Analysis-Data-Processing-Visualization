@@ -38,7 +38,7 @@ The dataset includes aggregated project data from multiple voluntary carbon mark
 
 
 ## Access the dashboard at:
-http://127.0.0.1:8050/
+https://carbon-market-gi4gdzz2kqstpeseamzjg2.streamlit.app/
 
 
 ## Interact with the dashboard:
