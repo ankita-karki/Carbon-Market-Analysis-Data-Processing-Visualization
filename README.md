@@ -1,12 +1,11 @@
-#  Carbon Market Visualization Dashboard
+#  Carbon Market Analysis: Data Processing & Visualization Dashboard
 
 ![Dashboard Screenshot](https://github.com/ankita-karki/carbon-market/blob/main/output%20map/Forestry&Landuse.png?raw=true)
 
-This repository contains an interactive dashboard for visualizing carbon credit distribution across different project scopes and geographical regions.The dataset used in this project was obtained from SQL queries run on carbon market registries.
+This repository provides SQL scripts for cleaning, transforming, and analyzing carbon credit project data from major registries, including VCS (Verra), Gold Standard (GS), American Carbon Registry (ACR), and Climate Action Reserve (CAR). The processed data is aggregated and visualized through an interactive dashboard, showcasing carbon credit distribution by project scope and geographic region. All datasets used in this project were generated from SQL queries executed on carbon market registries.
 
-Data Source
-
-The dataset includes aggregated project data from multiple voluntary carbon market registries, processed through SQL queries. The extracted data consists of:
+## Data Source
+The dataset includes aggregated project data from multiple voluntary carbon market registries (VCS, GS, ACR, CAR), processed through SQL queries. The extracted data consists of:
 * Region
 * Country
 * Market Type
@@ -15,7 +14,17 @@ The dataset includes aggregated project data from multiple voluntary carbon mark
 * Total Credits Issued
 * Number of Projects
 
-## Features
+
+## SQL Query Functionality
+The SQL query performs the following operations:
+1. Combines data from all four registries using UNION ALL.
+2. Standardizes column names to ensure consistency across registries.
+3. Groups data by region, country, market type, project scope, and project type.
+4. Counts the number of projects in each group.
+5. Sorts results by region, country, market type, and project count in descending order.
+
+
+## Visualization Features
 
 - **Interactive Choropleth Map**: Visualize credit distribution across countries
 - **Project Scope Filtering**: Dropdown selector for different project categories
