@@ -3,12 +3,15 @@ import pandas as pd
 import plotly.express as px
 
 # Load the data
-@st.cache_data  # Cache the data to improve performance
+@st.cache_data
 def load_data():
-    df = pd.read_csv('Data/AggregatedDataSQL.csv', sep='\t', encoding='utf-8')
-    if 'COUNT' not in df.columns:
-        df['COUNT'] = 1  # Assuming each row represents a single project
-    return df
+    data_path = "Data/AggregatedDataSQL.csv"
+    
+    if not os.path.exists(data_path):
+        st.error(f"File not found: {data_path}")
+        st.stop()
+
+    return pd.read_csv(data_path, sep="\t", encoding="utf-8")
 
 df = load_data()
 
