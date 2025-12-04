@@ -6,15 +6,18 @@ import plotly.express as px
 @st.cache_data
 def load_data():
     data_path = "Data/AggregatedDataSQL.csv"
-    
+
     if not os.path.exists(data_path):
         st.error(f"File not found: {data_path}")
         st.stop()
 
-    return pd.read_csv(data_path, sep="\t", encoding="utf-8")
+    df = pd.read_csv(data_path, sep="\t", encoding="utf-8")
 
-df = load_data()
+    # If COUNT column doesn't exist, create it
+    if "COUNT" not in df.columns:
+        df["COUNT"] = 1
 
+    return df
 # Custom color scale
 colorscale = px.colors.sequential.Plasma
 
